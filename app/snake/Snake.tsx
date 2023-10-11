@@ -19,7 +19,7 @@ export default function Snake() {
         nextDirection: string,
     }
 
-    const bw = 15 // 格子寬度
+    const bw = 13 // 格子寬度
     const bs = 2 // 格子間距
     const gameWidth = 40 // 總共有幾個格子( 40 * 40)
     const LEFT = 'Left'
