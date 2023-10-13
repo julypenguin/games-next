@@ -19,7 +19,7 @@ export default function Snake() {
         nextDirection: string,
     }
 
-    const bw = 13 // 格子寬度
+    const bw = 10 // 格子寬度
     const bs = 2 // 格子間距
     const gameWidth = 40 // 總共有幾個格子( 40 * 40)
     const LEFT = 'Left'
@@ -104,7 +104,7 @@ export default function Snake() {
         snakeRef.current = {
             body: [],
             maxLength: 5,
-            head: vector(),
+            head: vector(0, 20),
             speed: vector(1, 0),
             direction: RIGHT,
             nextDirection: '', // 避免蛇還沒更新卻連續按下多次方向鍵，導致原地死亡
@@ -114,6 +114,7 @@ export default function Snake() {
     const direction = (dir: string): Vector => {
         const snake = snakeRef.current
         if (!snake) return vector(1, 0)
+        if (!!snake.nextDirection) dir = snake.nextDirection
         switch (dir) {
             case UP:
                 snake.nextDirection = UP
