@@ -311,7 +311,7 @@ export default function Snake() {
     }, [])
 
     return (
-        <div className='game h-full relative flex justify-center items-center bg-black'>
+        <div className='game h-full relative flex justify-center items-center bg-gray-700'>
             <canvas
                 className='border-[1px] border-black max-w-full'
                 ref={canvasRef}
